@@ -15,7 +15,7 @@ image:
   pullPolicy: IfNotPresent
 
 bindings:
-  - role: editor
+  - role: edit
     users:
       - editor1@myco.com
       - editor2@myco.com
