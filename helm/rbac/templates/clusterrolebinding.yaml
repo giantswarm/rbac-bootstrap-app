@@ -1,0 +1,60 @@
+{{- range $key, $binding := .Values.bindings }}
+{{- if $binding.namespaces }}
+{{- range $namespace := $binding.namespaces }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    {{- include "rbac.labels" $ | nindent 4 }}
+  name: {{ $binding.role }}-{{ $key }}
+  namespace: {{ $namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ $binding.role }}
+subjects:
+{{- if gt (len $binding.users) 0 }}
+{{- range $user := $binding.users }}
+- kind: User
+  name: {{ $user }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}
+{{- if gt (len $binding.groups) 0 }}
+{{- range $group := $binding.groups }}
+- kind: Group
+  name: {{ $group }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}
+{{- end }}
+{{- else }} {{/* No namespaces -> ClusterRoleBindings */}}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    {{- include "rbac.labels" $ | nindent 4 }}
+  name: {{ $binding.role }}-{{ $key }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ $binding.role }}
+subjects:
+{{- if gt (len $binding.users) 0 }}
+{{- range $user := $binding.users }}
+- kind: User
+  name: {{ $user }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}
+{{- if gt (len $binding.groups) 0 }}
+{{- range $group := $binding.groups }}
+- kind: Group
+  name: {{ $group }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
