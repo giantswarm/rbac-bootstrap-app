@@ -4,7 +4,7 @@ annotations:
   application.giantswarm.io/team: "rainbow"
   config.giantswarm.io/version: 1.x.x
 name: rbac-app
-description: A Helm chart to facilitate the configuration of role bindings 
+description: A Helm chart to facilitate the configuration of role bindings
 engine: gotpl
 home: https://github.com/giantswarm/rbac-app
-version: 0.1.0 
+version: 0.1.0
