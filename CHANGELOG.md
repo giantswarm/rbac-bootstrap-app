@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/giantswarm/REPOSITORY_NAME/tree/master
+### Added
+
+- Initial version of the RBAC bootstrapping app
+
+[Unreleased]: https://github.com/giantswarm/rbac-bootstrap-app/tree/master
