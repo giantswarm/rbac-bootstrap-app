@@ -8,7 +8,7 @@ workflows:
       - architect/push-to-app-catalog:
           context: "architect"
           executor: "app-build-suite"
-          name: "package and push rbac bootstrap chart"
+          name: "package and push rbac-bootstrap chart"
           app_catalog: "giantswarm-playground-catalog"
           app_catalog_test: "giantswarm-playground-test-catalog"
           chart: "rbac-bootstrap"

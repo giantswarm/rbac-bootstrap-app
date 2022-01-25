@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/giantswarm/rbac-bootstrap-app.svg?style=shield)](https://circleci.com/gh/giantswarm/rbac-bootstrap-app)
 
-# RBAC bootstrap chart
+# RBAC bootstrap
 
-Giant Swarm offers a RBAC bootstrap App as a configuration package to bootstrap the initial role bindings.
+Giant Swarm offers the RBAC bootstrap app as a configuration package to bootstrap the initial role bindings for a workload cluster.
 Here we define the rbac chart with its templates and default configuration.
 
 **What is this app?**
@@ -15,7 +15,7 @@ Here we define the rbac chart with its templates and default configuration.
 
 **Who can use it?**
 
-- This app run in all clusters and versions.
+- This app can be used in all clusters and release versions.
 
 ## Installing
 
@@ -29,7 +29,7 @@ There are 3 ways to install this app onto a workload cluster.
 
 ### values.yaml
 **This is an example of a values file you could upload using our web interface.**
-```
+```yaml
 # values.yaml
 bindings:
   - role: edit
@@ -48,7 +48,7 @@ bindings:
       - adminteam
 ```
 
-This configuration create role bindings for `editor1@myco.com` and `editor1@myco.com` in the `ns1` and `ns2` namespaces. At the same time it creates a cluster role binding for `admin@myco.com` and `adminteam` to `admin` cluster role.
+This configuration creates role bindings for `editor1@myco.com` and `editor1@myco.com` in the `ns1` and `ns2` namespaces. At the same time it creates a cluster role binding for `admin@myco.com` and `adminteam` to the `admin` cluster role.
 
 ### Sample App CR and ConfigMap for the management cluster
 If you have access to the Kubernetes API on the management cluster, you could create
@@ -62,7 +62,7 @@ workload cluster `abc12`:
 
 ```
 
-```
+```yaml
 # user-values-configmap.yaml
 bindings:
   - role: edit
