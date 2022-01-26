@@ -5,6 +5,7 @@ annotations:
   config.giantswarm.io/version: 1.x.x
 name: rbac-bootstrap
 description: Helps to set up initial role bindings in a new cluster
+icon: https://s.giantswarm.io/app-icons/rbac-bootstrap/1/light.svg
 engine: gotpl
 home: https://github.com/giantswarm/rbac-bootstrap-app
 version: 0.1.0
