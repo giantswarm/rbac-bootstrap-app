@@ -6,6 +6,9 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "required": [
+                    "role"
+                ],
                 "properties": {
                     "groups": {
                         "type": "array",
