@@ -17,4 +17,4 @@ keywords:
   - authorization
   - rbac
   - bootstrapping
-kubeVersion: >= 1.15.0
+kubeVersion: ">= 1.15.0"
