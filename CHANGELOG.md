@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2022-02-24
+
 
 ### Changed
 
@@ -22,5 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial version of the RBAC bootstrapping app
 
-[Unreleased]: https://github.com/giantswarm/rbac-bootstrap-app/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/giantswarm/rbac-bootstrap-app/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/giantswarm/rbac-bootstrap-app/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/giantswarm/rbac-bootstrap-app/releases/tag/v0.1.0
