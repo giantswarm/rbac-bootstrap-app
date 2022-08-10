@@ -14,14 +14,14 @@ roleRef:
   kind: ClusterRole
   name: {{ $binding.role }}
 subjects:
-{{- if gt (len $binding.users) 0 }}
+{{- if $binding.users }}
 {{- range $user := $binding.users }}
 - kind: User
   name: {{ $user }}
   apiGroup: rbac.authorization.k8s.io
 {{- end }}
 {{- end }}
-{{- if gt (len $binding.groups) 0 }}
+{{- if $binding.groups }}
 {{- range $group := $binding.groups }}
 - kind: Group
   name: {{ $group }}
@@ -42,14 +42,14 @@ roleRef:
   kind: ClusterRole
   name: {{ $binding.role }}
 subjects:
-{{- if gt (len $binding.users) 0 }}
+{{- if $binding.users }}
 {{- range $user := $binding.users }}
 - kind: User
   name: {{ $user }}
   apiGroup: rbac.authorization.k8s.io
 {{- end }}
 {{- end }}
-{{- if gt (len $binding.groups) 0 }}
+{{- if $binding.groups }}
 {{- range $group := $binding.groups }}
 - kind: Group
   name: {{ $group }}
