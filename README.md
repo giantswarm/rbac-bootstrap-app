@@ -57,28 +57,55 @@ the App CR and ConfigMap directly.
 Here is an example that would install the app to
 workload cluster `abc12`:
 
-```
+```yaml
 # appCR.yaml
-
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  name: rbac-bootstrap
+  namespace: abc12
+spec:
+  catalog: giantswarm
+  kubeConfig:
+    context:
+      name: abc12
+    inCluster: false
+    secret:
+      name: abc12-kubeconfig
+      namespace: abc12
+  name: rbac-bootstrap
+  namespace: rbac-bootstrap
+  userConfig:
+    configMap:
+      name: rbac-bootstrap-user-values
+      namespace: abc12
+  version: 0.1.1
 ```
 
 ```yaml
 # user-values-configmap.yaml
-bindings:
-  - role: edit
-    users:
-      - editor1@myco.com
-      - editor2@myco.com
-    groups:
-      - devops
-    namespaces:
-      - ns1
-      - ns2
-  - role: admin
-    users:
-      - admin@myco.com
-    groups:
-      - adminteam
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rbac-bootstrap-user-values
+  namespace: abc12
+data:
+  values: |
+    bindings:
+      - role: edit
+        users:
+          - editor1@myco.com
+          - editor2@myco.com
+        groups:
+          - devops
+        namespaces:
+          - ns1
+          - ns2
+      - role: admin
+        users:
+          - admin@myco.com
+        groups:
+          - adminteam
 ```
 
 See our [full reference page on how to configure applications](https://docs.giantswarm.io/app-platform/app-configuration/) for more details.
