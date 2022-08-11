@@ -59,29 +59,6 @@ workload cluster `abc12`:
 
 ```yaml
 # appCR.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: rbac-bootstrap-user-values
-  namespace: abc12
-data:
-  values: |
-    bindings:
-      - role: edit
-        users:
-          - editor1@myco.com
-          - editor2@myco.com
-        groups:
-          - devops
-        namespaces:
-          - ns1
-          - ns2
-      - role: admin
-        users:
-          - admin@myco.com
-        groups:
-          - adminteam
----
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
@@ -107,21 +84,28 @@ spec:
 
 ```yaml
 # user-values-configmap.yaml
-bindings:
-  - role: edit
-    users:
-      - editor1@myco.com
-      - editor2@myco.com
-    groups:
-      - devops
-    namespaces:
-      - ns1
-      - ns2
-  - role: admin
-    users:
-      - admin@myco.com
-    groups:
-      - adminteam
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rbac-bootstrap-user-values
+  namespace: abc12
+data:
+  values: |
+    bindings:
+      - role: edit
+        users:
+          - editor1@myco.com
+          - editor2@myco.com
+        groups:
+          - devops
+        namespaces:
+          - ns1
+          - ns2
+      - role: admin
+        users:
+          - admin@myco.com
+        groups:
+          - adminteam
 ```
 
 See our [full reference page on how to configure applications](https://docs.giantswarm.io/app-platform/app-configuration/) for more details.
