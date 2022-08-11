@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added an example of direct app deployment to README
+
 ### Fixed
 
 - Fixed rendering helm template with empty users and/or roles
