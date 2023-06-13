@@ -1,7 +1,7 @@
 apiVersion: v2
 appVersion: 0.0.1
 annotations:
-  application.giantswarm.io/team: "rainbow"
+  application.giantswarm.io/team: "bigmac"
   config.giantswarm.io/version: 1.x.x
 name: rbac-bootstrap
 description: Helps to set up initial role bindings in a new cluster
@@ -12,7 +12,7 @@ version: 0.2.0
 sources:
   - https://github.com/giantswarm/rbac-bootstrap-app
 maintainers:
-  - name: Giant Swarm Team Rainbow
+  - name: Giant Swarm Team BigMac
 keywords:
   - authorization
   - rbac
