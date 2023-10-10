@@ -10,9 +10,10 @@
     ".github/workflows/pre_commit_*.yaml"
   ],
   "ignoreDeps": [
+    "actions/setup-go",
     "architect",
-    "zricethezav/gitleaks-action",
-    "actions/setup-go"
+    "github.com/imdario/mergo",
+    "zricethezav/gitleaks-action"
   ],
   "regexManagers": [
     {
@@ -21,6 +22,5 @@
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
-  ],
-  "schedule": [ "after 6am on thursday" ]
+  ]
 }
