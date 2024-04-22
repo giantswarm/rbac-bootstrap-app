@@ -8,7 +8,7 @@ description: Helps to set up initial role bindings in a new cluster
 icon: https://s.giantswarm.io/app-icons/rbac-bootstrap/1/light.svg
 engine: gotpl
 home: https://github.com/giantswarm/rbac-bootstrap-app
-version: 0.2.1
+version: 0.2.2
 sources:
   - https://github.com/giantswarm/rbac-bootstrap-app
 maintainers:
