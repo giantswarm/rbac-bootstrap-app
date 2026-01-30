@@ -1,8 +1,8 @@
 apiVersion: v2
 appVersion: 0.0.1
 annotations:
-  application.giantswarm.io/team: "shield"
-  config.giantswarm.io/version: 1.x.x
+  io.giantswarm.application.audience: all
+  io.giantswarm.application.team: shield
 name: rbac-bootstrap
 description: Helps to set up initial role bindings in a new cluster
 icon: https://s.giantswarm.io/app-icons/rbac-bootstrap/1/light.svg
