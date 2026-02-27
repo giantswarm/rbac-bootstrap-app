@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `io.giantswarm.application.managed` chart annotation for Backstage visibility.
+
+### Changed
+
+- Migrate chart metadata annotations to OCI-compatible format.
+
 ## [0.2.3] - 2026-02-03
 
 ### Changed
