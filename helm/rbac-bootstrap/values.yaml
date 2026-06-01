@@ -1,11 +1,7 @@
 clusterReader:
   # When true, install a `cluster-reader` ClusterRole that aggregates into the
-  # built-in `view` ClusterRole via the
-  # `rbac.authorization.k8s.io/aggregate-to-view` label. It grants get/list/watch
-  # on cluster-scoped resources (nodes, persistentvolumes, storageclasses,
-  # CRDs, apiservices, webhook configurations, ingressclasses, priorityclasses,
-  # runtimeclasses, metrics) so any binding to `view` gains basic
-  # cluster-troubleshooting reads.
+  # built-in `view` ClusterRole via the `rbac.authorization.k8s.io/aggregate-to-view`
+  #  label and it grants get/list/watch on cluster-scoped resources (nodes, ...)
   enabled: false
 
 # bindings:
