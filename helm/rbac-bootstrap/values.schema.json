@@ -3,6 +3,7 @@
     "type": "object",
     "properties": {
         "clusterReader": {
+            "description": " Enable cluster role to read all cluster-wide resources. Extends view role with cluster scope resources too",
             "type": "object",
             "properties": {
                 "enabled": {
