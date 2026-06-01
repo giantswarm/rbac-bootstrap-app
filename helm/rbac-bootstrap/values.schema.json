@@ -2,6 +2,15 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
+        "clusterReader": {
+            "description": "Enable cluster role to read all cluster-wide resources. Extends view role with cluster-scope resources too. The default value is false",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
         "bindings": {
             "type": "array",
             "items": {
