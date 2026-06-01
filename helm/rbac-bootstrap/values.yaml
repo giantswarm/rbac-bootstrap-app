@@ -1,7 +1,7 @@
 clusterReader:
   # When true, install a `cluster-reader` ClusterRole that aggregates into the
   # built-in `view` ClusterRole via the `rbac.authorization.k8s.io/aggregate-to-view`
-  #  label and it grants get/list/watch on cluster-scoped resources (nodes, ...)
+  # label and it grants get/list/watch on cluster-scoped resources (nodes, ...)
   enabled: false
 
 # bindings:
